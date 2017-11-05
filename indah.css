@@ -1,0 +1,309 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+
+body{
+	background: #dedede;
+	font-family: 'Helvetica', arial, sans-serif;
+
+	font-size: 1em;
+}
+
+p{
+	margin-bottom: 20px;
+	line-height: 1.5em;
+}
+h3{
+	margin-bottom: 20px;
+	border-bottom: 1px solid #aaa;
+}
+
+a{
+	text-decoration: none;
+	color: #333;
+}
+a:hover{
+	color: #666;
+}
+
+
+.container{
+	max-width: 1080px;
+	margin: 20px auto;
+	background: #fff;
+	overflow: hidden;
+	padding: 10px;
+}
+
+
+.header{
+	border: 1px solid #dedede;
+	padding: 10px;
+	margin: 10px;
+}
+
+/* Main */
+	.kiri{
+		width: 250px;
+		border: 1px solid #dedede;
+		padding: 10px;
+		margin: 10px;
+		float: left;
+		background: white;
+	}
+
+	.tengah{
+		width: 500px;
+		border: 1px solid #dedede;
+		padding: 10px;
+		margin: 10px;
+		float: left;
+	}
+		.tengah img{
+			max-width: 100%;
+			height: auto;
+		}
+
+		.tengah a{
+			font-weight: bold;
+		}
+
+	.kanan{
+		width: 250px;
+		border: 1px solid #dedede;
+		padding: 10px;
+		margin: 10px;
+		float: left;
+	}
+
+
+	.kanan ul{
+		list-style-type: none;
+	}
+	.kanan ul li{
+		display: block;
+	}
+	.kanan ul li a{
+		display: block;
+		border-bottom: 1px solid #dedede;
+		margin-bottom: 10px;
+		padding: 10px 5px;
+	}
+	.kanan ul li a:hover{
+		color: orange;
+	}
+
+.footer{
+	clear: both;
+	border: 1px solid #dedede;
+	padding: 10px;
+	margin: 10px;
+	text-align: center;
+}
+
+
+/************************************************************************************
+MEDIA QUERIES
+*************************************************************************************/
+/* untuk ukuran 1080px kebawah */
+@media screen and (max-width: 1080px) {
+	
+	.container {
+		width: 100%;
+	}
+	.kiri {
+		width: 25%;
+	}
+	.tengah {
+		width: 68%;
+		float: right;
+	}
+	
+	.kanan {
+		clear: both;
+		padding: 1% 4%;
+		width: auto;
+		float: none;
+	}
+}
+
+
+/* untuk ukuran layar 780px kebawah */
+@media screen and (max-width: 780px) {
+	
+	.header, 
+	.kiri {
+		width: auto;
+		float: none;
+		text-align: center;
+	}
+	
+	.tengah {
+		width: auto;
+		float: none;
+	}
+	
+	.kanan {
+		width: auto;
+		float: none;
+	}
+	.footer{
+		text-align: center;
+	}
+
+}
+
+
+/***** Menu Navigasi *****/
+
+.nav {
+	width:250px auto;
+	list-style-type: none;
+	overflow: hidden;
+}
+
+.nav li a {
+	text-decoration:none;
+	border-top:1px solid #ffffff;
+	color:white;
+	display:block;
+	background-color:grey;
+	padding:10px;
+}
+
+.nav li a:hover {
+	background-color:#f0f0f0;
+	color: orange;
+}
+
+/* Hide the list item that contains the link that should open and close the nav on small screens */
+ul.nav li.icon {display: none;}
+
+/* Saat lebar layar kurang dari 780 pixel, sembunyikan semua menu item kecuali item yang pertama yaitu("Home"). Tampilkan juga list item yang berisi link untuk membuka menu yaitu (li.icon) */
+@media screen and (max-width:780px) {
+  ul.nav li {display: none;}
+  ul.nav li.icon {
+    float: right;
+    display: inline-block;
+  }
+}
+
+/* Class dengan nama "responsive" akan ditambahkan oleh JavaScript saat user mengklik icon. Munculnya Class ini akan mendisplay isi list menu 
+*/
+@media screen and (max-width:780px) {
+  ul.nav.responsive {position: relative;}
+  ul.nav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  ul.nav.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul.nav.responsive li a {
+    display: block;
+    text-align: left;
+  }
+}
+
+/****** CSS Tabel ******/
+/*-------------------------*/
+table, th, td {
+    padding: 8px 20px;
+}
+
+.table1 {
+    color: #444;
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #f2f5f7;
+    text-align: center;
+
+}
+ 
+.table1 tr th{
+    background: orange;
+    color: #fff;
+    font-weight: normal;
+    padding: 8px 20px;
+}
+ 
+.table1 tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/*****Responsive Table*****/
+@media screen and (max-width: 500px) {
+	.table1 {
+		width: 100%;
+	}
+	.table1 th.column-primary {
+		width: 100%;
+	}
+
+	.table1 th:not(.column-primary) {
+		display:none;
+	}
+	
+	.table1 th[scope="row"] {
+		vertical-align: top;
+	}
+	
+	.table1 td {
+		display: block;
+		width: auto;
+		text-align: left;
+	}
+	.table1 th::before {
+		text-transform: uppercase;
+		font-weight: bold;
+		content: attr(data-header);
+	}
+	.table1 th:first-child span {
+		display: none;
+	}
+	.table1 td::before {
+		float: left;
+		text-transform: uppercase;
+		font-weight: bold;
+		content: attr(data-header);
+	}
+}
+
+
+
+/* Create four equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+
+.column img {
+    margin-top: 12px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 1080px) {
+    .column {
+        width: 50%;
+    }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 780px) {
+    .column {
+        width: 100%;
+    }
+}
